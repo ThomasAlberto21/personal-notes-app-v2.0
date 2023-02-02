@@ -74,7 +74,6 @@ main button {
   display: grid;
   grid-template-columns: 1fr;
   gap: 16px;
-
   padding: 16px 8px;
 }
 
@@ -87,22 +86,34 @@ main button {
   text-align: center;
   color: black;
 }
+
+.note-body {
+  position: relative;
+  transition: 0.5s ease-out;
+  overflow: visible;
+  cursor: pointer;
+}
 .note-item {
-  padding: 16px;
+  padding: 20px;
+  margin: 25px 0;
   border-radius: 8px;
-  border: 1px solid black;
-  border-top: 5px solid;
+  border: 1px solid var(--background-blue);
+  border-top: 5px solid var(--background-blue);
 }
 
 .note-item__title {
   margin: 4px 0;
+  font-weight: 700;
+  font-size: 1.2rem;
   text-decoration: none;
+  color: var(--background-blue);
 }
 
 .note-item__createdAt {
-  color: black;
+  color: var(--background-blue);
   font-size: 14px;
   margin: 4px 0;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -115,6 +126,32 @@ main button {
   -webkit-line-clamp: 6;
   -webkit-box-orient: vertical;
   text-decoration: none;
+}
+
+.note-item__button {
+  transform: translate(-50%, 125%);
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--background-blue);
+  color: #fff;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  opacity: 0;
+  transition: 0.3s ease-out;
+}
+
+.note-body:hover .note-item__button {
+  transform: translate(-50%, 50%);
+  opacity: 1;
+}
+
+.note-item__button:hover {
+  border-color: #008bf8;
+  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
 }
 
 .detail-page {
@@ -130,7 +167,7 @@ main button {
 }
 
 .detail-page__createdAt {
-  color: var(--on-background-grey);
+  color: var(--on-background-blue);
 }
 
 .detail-page__body {
@@ -221,6 +258,7 @@ main button {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  font-size: 10px;
 }
 
 .close {
