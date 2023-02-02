@@ -2,7 +2,7 @@ import React from 'react';
 import { getActiveNotes } from '../utils/local-data';
 import SearchBar from '../components/SearchBar';
 import NoteList from '../components/NoteList';
-import AddNote from '../components/AddNote';
+import NoteInputWrapper from '../components/NoteInput';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class HomePage extends React.Component {
         <h1>Catatan Aktif</h1>
         <div className='header-homepage'>
           <SearchBar />
-          <AddNote />
+          <NoteInputWrapper />
         </div>
         <NoteList
           notes={this.state.notes}
