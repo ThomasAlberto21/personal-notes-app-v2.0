@@ -9,6 +9,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 a {
@@ -93,8 +94,9 @@ main button {
   overflow: visible;
   cursor: pointer;
 }
+
 .note-item {
-  padding: 20px;
+  padding: 25px 16px;
   margin: 25px 0;
   border-radius: 8px;
   border: 1px solid var(--background-blue);
@@ -151,7 +153,7 @@ main button {
 
 .note-item__button:hover {
   border-color: #008bf8;
-  box-shadow: 0 4px 18px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: 0 4px 18px 0 rgba(34, 29, 29, 0.25);
 }
 
 .detail-page {
@@ -201,41 +203,7 @@ main button {
   cursor: pointer;
 }
 
-.add-new-page__input {
-  margin-top: 32px;
-}
-
-.add-new-page__input .add-new-page__input__title {
-  width: 100%;
-  background-color: transparent;
-  border: 0;
-  color: var(--on-background);
-  font-family: 'Inter', sans-serif;
-  font-size: 64px;
-  font-weight: bold;
-  padding: 8px 0;
-}
-
-.add-new-page__input__title::placeholder {
-  color: var(--on-background-grey);
-}
-
-.add-new-page__input .add-new-page__input__body {
-  width: 100%;
-  background-color: transparent;
-  border: 0;
-  color: var(--on-background);
-  font-family: 'Inter', sans-serif;
-  font-size: 24px;
-  padding: 8px 0;
-  min-height: 500px;
-}
-
-[data-placeholder]:empty::before {
-  content: attr(data-placeholder);
-  color: var(--on-background-grey);
-}
-
+/* Modal pencarian */
 .modal {
   position: fixed;
   z-index: 1;
@@ -252,6 +220,7 @@ main button {
   padding: 20px;
   width: 80%;
   box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  transition: 0.3s ease-out;
 }
 
 .modal-content .header {
@@ -281,6 +250,86 @@ button[type='submit'] {
 }
 
 button[type='submit'] {
+  background-color: var(--background-blue);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Modal add note */
+
+.add-note-body {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.add-note .add-note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
+}
+
+.add-note .add-note-button {
+  float: right;
+  margin: 30px 0;
+  color: var(--background-blue);
+}
+
+.add-note-modal-content {
+  background-color: #fefefe;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  height: 60%;
+}
+
+.close-add-note {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-add-note:hover,
+.close-add-note:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.add-note input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.add-note textarea {
+  width: 100%;
+  height: 20vh;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+}
+
+.add-note button[type='submit'] {
   background-color: var(--background-blue);
   color: white;
   padding: 12px 20px;

@@ -2,6 +2,7 @@ import React from 'react';
 import { getActiveNotes } from '../utils/local-data';
 import SearchBar from '../components/SearchBar';
 import NoteList from '../components/NoteList';
+import AddNote from '../components/AddNote';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -33,6 +34,7 @@ class HomePage extends React.Component {
           notes={this.state.notes}
           messageNotFound='Tidak ada catatan'
         />
+        <AddNote />
       </main>
     );
   }
