@@ -29,12 +29,14 @@ class HomePage extends React.Component {
     return (
       <main>
         <h1>Catatan Aktif</h1>
-        <SearchBar />
+        <div className='header-homepage'>
+          <SearchBar />
+          <AddNote />
+        </div>
         <NoteList
           notes={this.state.notes}
           messageNotFound='Tidak ada catatan'
         />
-        <AddNote />
       </main>
     );
   }
