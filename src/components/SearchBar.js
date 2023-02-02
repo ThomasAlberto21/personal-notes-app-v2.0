@@ -1,47 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { BsXLg } from 'react-icons/bs';
 
-class SearchBar extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      display: 'none',
-    };
-  }
+const SearchBar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-  openModal = () => {
-    this.setState({
-      display: 'block',
-    });
-  };
-
-  closeModal = () => {
-    this.setState({
-      display: 'none',
-    });
-  };
-
-  render() {
-    return (
-      <main>
-        <button onClick={this.openModal} className='show-modal'>
-          Cari Catatan
-        </button>
-        <div style={{ display: this.state.display }} className='modal'>
+  return (
+    <div>
+      <button onClick={() => setIsOpen(true)}>Cari Catatan Anda</button>
+      {isOpen && (
+        <div className='modal'>
           <div className='modal-content'>
-            <span onClick={this.closeModal} className='close'>
-              <BsXLg />
-            </span>
-            <form>
-              <h1>Catatan Aktif</h1>
-              <input type='text' placeholder='Cari Catatan Anda...' />
-              <button type='submit'>Submit</button>
-            </form>
+            <div className='header'>
+              <h1>Cari Catatan Anda</h1>
+              <span className='close' onClick={() => setIsOpen(false)}>
+                <BsXLg />
+              </span>
+            </div>
+            <input
+              type='text'
+              // value={keyword}
+              // onChange={(event) => keywordChange(event.target.value)}
+              placeholder='Masukkan Judul Catatan Anda'
+            />
+            <button type='submit'>Cari</button>
           </div>
         </div>
-      </main>
-    );
-  }
-}
+      )}
+    </div>
+  );
+};
 
 export default SearchBar;

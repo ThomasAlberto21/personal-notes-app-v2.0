@@ -1,12 +1,15 @@
 import React from 'react';
 import Navbar from './components/Navbar';
-import SearchBar from './components/SearchBar';
+import HomePage from './pages/HomePage';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
     <div className='app-container'>
       <Navbar />
-      <SearchBar />
+      <Routes>
+        <Route path='/' element={<HomePage />} />
+      </Routes>
     </div>
   );
 }
