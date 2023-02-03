@@ -260,92 +260,68 @@ button[type='submit'] {
 }
 
 /* Modal add note */
-.add-note-body {
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
-
-.add-note .add-note-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 10px;
-}
-
-.add-note .add-note-button {
-  float: right;
-  margin: 30px 0;
+.add-note {
+  margin: 40px 20px;
   color: var(--background-blue);
 }
 
-.add-note-modal-content {
-  background-color: #fefefe;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
+.add-note form {
+  padding: 2em;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  margin: 2em auto;
 }
 
-.add-note-char-limit {
-  font-size: 14px;
-  font-weight: 500;
-  text-align: right;
-  color: var(--background-blue);
+.add-note .form-group {
+  margin-bottom: 1.5em;
 }
 
-.close-add-note {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
+.add-note p {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.add-note label {
+  display: block;
   font-weight: bold;
+  margin-bottom: 0.5em;
+  text-align: right;
 }
 
-.close-add-note:hover,
-.close-add-note:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.add-note input {
+.add-note input,
+textarea {
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  padding: 0.5em;
+  font-size: 1em;
+  border: 1px solid gray;
+  border-radius: 5px;
+  transition: 0.3s;
 }
 
 .add-note textarea {
-  width: 100%;
-  height: 20vh;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
+  height: 60vh;
 }
 
-.add-note button[type='submit'] {
+.add-note input:focus,
+textarea:focus {
+  outline: none;
+}
+
+.add-note button {
+  display: block;
+  margin: 2em auto;
+  padding: 1em 2em;
   background-color: var(--background-blue);
   color: white;
-  padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
 .add-note button:hover:active {
-  opacity: 0.7;
+  opacity: 0.5;
 }
 
 .header-homepage {

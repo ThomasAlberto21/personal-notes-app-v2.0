@@ -23,7 +23,6 @@ const SearchBar = ({ keyword, keywordChange }) => {
               onChange={(event) => keywordChange(event.target.value)}
               placeholder='Masukkan Judul Catatan Anda'
             />
-            <button type='submit'>Cari</button>
           </div>
         </div>
       )}

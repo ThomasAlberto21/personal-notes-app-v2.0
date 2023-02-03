@@ -1,7 +1,7 @@
 import React from 'react';
 import NoteList from '../components/NoteList';
 import SearchBar from '../components/SearchBar';
-import NoteInputWrapper from '../components/NoteInput';
+import NoteInputButton from '../components/NoteInputButton';
 import { getActiveNotes } from '../utils/local-data';
 import { useSearchParams } from 'react-router-dom';
 
@@ -53,7 +53,7 @@ class HomePage extends React.Component {
             keyword={this.state.keyword}
             keywordChange={this.onKeywordChangeHandler}
           />
-          <NoteInputWrapper />
+          <NoteInputButton />
         </div>
         <NoteList notes={notes} messageNotFound='Tidak ada catatan' />
       </main>
