@@ -2,8 +2,8 @@ import React from 'react';
 import NoteList from '../components/NoteList';
 import SearchBar from '../components/SearchBar';
 import NoteInputWrapper from '../components/NoteInput';
-import { useSearchParams } from 'react-router-dom';
 import { getActiveNotes } from '../utils/local-data';
+import { useSearchParams } from 'react-router-dom';
 
 const HomePageWrapper = () => {
   const [searchParams, setSearchParams] = useSearchParams();

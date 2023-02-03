@@ -293,6 +293,13 @@ button[type='submit'] {
   width: 80%;
 }
 
+.add-note-char-limit {
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+  color: var(--background-blue);
+}
+
 .close-add-note {
   color: #aaa;
   float: right;

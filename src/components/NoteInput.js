@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
-import { IoMdAddCircle } from 'react-icons/io';
 import { BsXLg } from 'react-icons/bs';
 import { addNote } from '../utils/local-data';
+import { useNavigate } from 'react-router-dom';
+import { IoMdAddCircle } from 'react-icons/io';
 
 const NoteInputWrapper = () => {
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ class NoteInput extends React.Component {
     this.state = {
       title: '',
       body: '',
+      titleLimit: 50,
       showModal: false,
     };
 
@@ -27,10 +28,12 @@ class NoteInput extends React.Component {
     this.onBodyHandler = this.onBodyHandler.bind(this);
   }
 
+
+
   onTitleHandler(e) {
     this.setState(() => {
       return {
-        title: e.target.value,
+        title: e.target.value.slice(0, this.state.titleLimit),
       };
     });
   }
@@ -78,8 +81,13 @@ class NoteInput extends React.Component {
                 </span>
               </div>
               <form onSubmit={this.handleSubmit}>
+                <p className='add-note-char-limit'>
+                  Sisa karakter : {' '}
+                  {this.state.titleLimit - this.state.title.length}
+                </p>
                 <input
                   type='text'
+                  value={this.state.title}
                   placeholder='Input Judul Catatan Anda...'
                   onChange={this.onTitleHandler}
                 />
@@ -98,7 +106,7 @@ class NoteInput extends React.Component {
 }
 
 NoteInput.propTypes = {
-  onSubmitHandler: PropTypes.func,
+  doSomething: PropTypes.func,
 };
 
 export default NoteInputWrapper;

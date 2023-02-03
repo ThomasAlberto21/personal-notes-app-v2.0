@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { BsXLg } from 'react-icons/bs';
 import PropTypes from 'prop-types';
+import { BsXLg } from 'react-icons/bs';
+import { useState } from 'react';
 
 const SearchBar = ({ keyword, keywordChange }) => {
   const [isOpen, setIsOpen] = useState(false);

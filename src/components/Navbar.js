@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { BiArchiveIn } from 'react-icons/bi';
 
-function Navbar() {
+const Navbar = () => {
   return (
     <nav>
       <h1>
@@ -20,6 +20,6 @@ function Navbar() {
       </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

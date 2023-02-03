@@ -1,8 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import NoteItem from './NoteItem';
+import PropTypes from 'prop-types';
 
-function NoteList({ notes, messageNotFound }) {
+const NoteList = ({ notes, messageNotFound }) => {
   if (notes.length === 0) {
     return <p className='notes-list-empty'>{messageNotFound}</p>;
   }
@@ -14,7 +14,7 @@ function NoteList({ notes, messageNotFound }) {
       ))}
     </div>
   );
-}
+};
 
 NoteList.propTypes = {
   notes: PropTypes.arrayOf(PropTypes.object).isRequired,
