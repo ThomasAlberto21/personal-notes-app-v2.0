@@ -2,11 +2,25 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { addNote } from '../utils/local-data';
 import { useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NoteInputWrapper = () => {
   const navigate = useNavigate();
   const doSomething = () => {
-    navigate('/');
+    if (addNote) {
+      navigate('/');
+      toast.success('Catatan Berhasil Ditambahkan', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'light',
+      });
+    }
   };
 
   return <NoteInput doSomethingOnSubmit={doSomething} />;

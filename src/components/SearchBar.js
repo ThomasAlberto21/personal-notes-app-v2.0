@@ -1,13 +1,18 @@
 import PropTypes from 'prop-types';
 import { BsXLg } from 'react-icons/bs';
 import { useState } from 'react';
+import { IoSearchCircleSharp } from 'react-icons/io5';
 
 const SearchBar = ({ keyword, keywordChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div>
-      <button onClick={() => setIsOpen(true)}>Cari Catatan Anda</button>
+      <IoSearchCircleSharp
+        onClick={() => setIsOpen(true)}
+        className='add-note-button'
+        size={'4.4rem'}
+      />
       {isOpen && (
         <div className='modal'>
           <div className='modal-content'>

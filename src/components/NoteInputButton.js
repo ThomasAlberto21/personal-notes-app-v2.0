@@ -1,14 +1,12 @@
 import React from 'react';
-import { IoMdAddCircle } from 'react-icons/io';
 import { Link } from 'react-router-dom';
+import { IoMdAddCircle } from 'react-icons/io';
 
 const NoteInputButton = () => {
   return (
-    <div className='add-note'>
+    <div className='add-note-button'>
       <Link to='/addnote'>
-        <IoMdAddCircle className='add-note-button' size={'4rem'}>
-          Add
-        </IoMdAddCircle>
+        <IoMdAddCircle className='add-note-button' size={'4rem'} />
       </Link>
     </div>
   );

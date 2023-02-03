@@ -4,6 +4,7 @@ import SearchBar from '../components/SearchBar';
 import NoteInputButton from '../components/NoteInputButton';
 import { getActiveNotes } from '../utils/local-data';
 import { useSearchParams } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 
 const HomePageWrapper = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -47,13 +48,16 @@ class HomePage extends React.Component {
 
     return (
       <main>
-        <h1>Catatan Aktif</h1>
         <div className='header-homepage'>
-          <SearchBar
-            keyword={this.state.keyword}
-            keywordChange={this.onKeywordChangeHandler}
-          />
-          <NoteInputButton />
+          <h1>Catatan Aktif</h1>
+          <div className='header-button'>
+            <SearchBar
+              keyword={this.state.keyword}
+              keywordChange={this.onKeywordChangeHandler}
+            />
+            <NoteInputButton />
+            <ToastContainer />
+          </div>
         </div>
         <NoteList notes={notes} messageNotFound='Tidak ada catatan' />
       </main>

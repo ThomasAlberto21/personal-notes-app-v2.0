@@ -4,6 +4,8 @@ import AddNote from './pages/AddNote';
 import HomePageWrapper from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 
+
+
 function App() {
   return (
     <div className='app-container'>

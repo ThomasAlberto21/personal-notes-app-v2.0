@@ -265,6 +265,11 @@ button[type='submit'] {
   color: var(--background-blue);
 }
 
+.add-note-button {
+  color: var(--background-blue);
+  text-align: right;
+}
+
 .add-note form {
   padding: 2em;
   background-color: white;
@@ -328,7 +333,12 @@ textarea:focus {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: -40px;
+}
+
+.header-homepage .header-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 @media screen and (min-width: 650px) {
