@@ -329,6 +329,11 @@ textarea:focus {
   opacity: 0.5;
 }
 
+.add-note button:disabled {
+  opacity: 0.3;
+  color: white;
+}
+
 .header-homepage {
   display: flex;
   align-items: center;

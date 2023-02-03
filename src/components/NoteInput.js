@@ -62,6 +62,8 @@ class NoteInput extends React.Component {
   };
 
   render() {
+    const { title, body } = this.state;
+
     return (
       <div className='add-note'>
         <form onSubmit={this.handleSubmit}>
@@ -87,7 +89,9 @@ class NoteInput extends React.Component {
               onChange={this.onBodyHandler}
             />
           </div>
-          <button type='submit'>Buat Catatan Baru</button>
+          <button type='submit' disabled={!title || !body}>
+            Buat Catatan Baru
+          </button>
         </form>
       </div>
     );

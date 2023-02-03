@@ -15,7 +15,7 @@ const NoteItem = ({ note }) =>{
             day: 'numeric',
           })}
         </p>
-        <p className='note-item__body'>{note.body.substring(0, 80) + '...'}</p>
+        <p className='note-item__body'>{note.body.substring(0, 70) + '...'}</p>
       </div>
       <Link to={`/notes/${note.id}`}>
         <button className='note-item__button'>Baca Lagi</button>
