@@ -12,7 +12,7 @@ const Navbar = () => {
       <div className='navigation'>
         <ul>
           <li>
-            <Link to='/arsip'>
+            <Link to='/archivednotes'>
               <BiArchiveIn size={'2rem'} />
             </Link>
           </li>

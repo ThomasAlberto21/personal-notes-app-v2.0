@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { toast } from 'react-toastify';
 import { addNote } from '../utils/local-data';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const NoteInputWrapper = () => {
