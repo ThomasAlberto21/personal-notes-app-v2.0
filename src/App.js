@@ -5,6 +5,7 @@ import ArchiveNote from './pages/ArchiveNote';
 import HomePageWrapper from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import DetailNoteWrapper from './pages/DetailNote';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (

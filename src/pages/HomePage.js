@@ -48,6 +48,7 @@ class HomePage extends React.Component {
 
     return (
       <main>
+        <ToastContainer />
         <div className='header-homepage'>
           <h1>Catatan Aktif</h1>
           <div className='header-button'>
@@ -56,7 +57,6 @@ class HomePage extends React.Component {
               keywordChange={this.onKeywordChangeHandler}
             />
             <NoteInputButton />
-            <ToastContainer />
           </div>
         </div>
         <NoteList notes={notes} messageNotFound='Tidak ada catatan' />

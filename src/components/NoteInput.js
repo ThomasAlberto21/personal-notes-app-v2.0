@@ -3,14 +3,13 @@ import PropTypes from 'prop-types';
 import { toast } from 'react-toastify';
 import { addNote } from '../utils/local-data';
 import { useNavigate } from 'react-router-dom';
-import 'react-toastify/dist/ReactToastify.css';
 
 const NoteInputWrapper = () => {
   const navigate = useNavigate();
   const doSomething = () => {
     if (addNote) {
       navigate('/');
-      toast.success('Catatan Berhasil Ditambahkan', {
+      toast.success('Add Note Success', {
         position: 'top-center',
         autoClose: 5000,
         hideProgressBar: false,

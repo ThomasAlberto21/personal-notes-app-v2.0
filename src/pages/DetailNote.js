@@ -1,6 +1,8 @@
 import React from 'react';
 import DeleteButton from '../components/DeleteButton';
+import { toast } from 'react-toastify';
 import ArchiveAndUnArchiveButton from '../components/ArchiveAndUnArchiveButton';
+
 import { useNavigate, useParams } from 'react-router-dom';
 import {
   archiveNote,
@@ -15,15 +17,44 @@ const DetailNoteWrapper = () => {
 
   const onDeleteHandler = (id) => {
     deleteNote(id);
-
+    toast.success('Catatan Berhasil Dihapus', {
+      position: 'top-center',
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: false,
+      pauseOnHover: false,
+      draggable: false,
+      progress: undefined,
+      theme: 'light',
+    });
     navigate('/');
   };
 
   const onArchivedAndActiveHandler = (id, archived) => {
     if (archived) {
       unarchiveNote(id);
+      toast.success('Un Archived Success', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'light',
+      });
     } else {
       archiveNote(id);
+      toast.success('Archived Success', {
+        position: 'top-center',
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: false,
+        draggable: false,
+        progress: undefined,
+        theme: 'light',
+      });
     }
 
     navigate('/');
@@ -70,6 +101,7 @@ class DetailNote extends React.Component {
             <DeleteButton
               id={this.state.note.id}
               onDeleteHandler={this.props.onDeleteHandler}
+              onClick={this.showToast}
             />
           </div>
         </div>
