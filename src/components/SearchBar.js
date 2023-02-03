@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { BsXLg } from 'react-icons/bs';
+import PropTypes from 'prop-types';
 
-const SearchBar = () => {
+const SearchBar = ({ keyword, keywordChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -18,8 +19,8 @@ const SearchBar = () => {
             </div>
             <input
               type='text'
-              // value={keyword}
-              // onChange={(event) => keywordChange(event.target.value)}
+              value={keyword}
+              onChange={(event) => keywordChange(event.target.value)}
               placeholder='Masukkan Judul Catatan Anda'
             />
             <button type='submit'>Cari</button>
@@ -28,6 +29,11 @@ const SearchBar = () => {
       )}
     </div>
   );
+};
+
+SearchBar.propType = {
+  keyword: PropTypes.string.isRequired,
+  keywordChange: PropTypes.func.isRequired,
 };
 
 export default SearchBar;

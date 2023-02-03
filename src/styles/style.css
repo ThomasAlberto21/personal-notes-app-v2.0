@@ -80,6 +80,8 @@ main button {
 .notes-list-empty {
   margin-top: 32px;
   padding: 16px 8px;
+  color: var(--background-blue);
+  font-weight: 600;
 }
 
 .notes-list-empty p {
@@ -333,6 +335,10 @@ button[type='submit'] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.add-note button:hover:active {
+  opacity: 0.7;
 }
 
 .header-homepage {

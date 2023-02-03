@@ -1,8 +1,21 @@
 import React from 'react';
-import { getActiveNotes } from '../utils/local-data';
-import SearchBar from '../components/SearchBar';
 import NoteList from '../components/NoteList';
+import SearchBar from '../components/SearchBar';
 import NoteInputWrapper from '../components/NoteInput';
+import { useSearchParams } from 'react-router-dom';
+import { getActiveNotes } from '../utils/local-data';
+
+const HomePageWrapper = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const keyword = searchParams.get('keyword');
+  function changeSearchParams(keyword) {
+    setSearchParams({ keyword });
+  }
+
+  return (
+    <HomePage defaultKeyword={keyword} keywordChange={changeSearchParams} />
+  );
+};
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -26,20 +39,26 @@ class HomePage extends React.Component {
   }
 
   render() {
+    const notes = this.state.notes.filter((note) => {
+      return note.title
+        .toLowerCase()
+        .includes(this.state.keyword.toLowerCase());
+    });
+
     return (
       <main>
         <h1>Catatan Aktif</h1>
         <div className='header-homepage'>
-          <SearchBar />
+          <SearchBar
+            keyword={this.state.keyword}
+            keywordChange={this.onKeywordChangeHandler}
+          />
           <NoteInputWrapper />
         </div>
-        <NoteList
-          notes={this.state.notes}
-          messageNotFound='Tidak ada catatan'
-        />
+        <NoteList notes={notes} messageNotFound='Tidak ada catatan' />
       </main>
     );
   }
 }
 
-export default HomePage;
+export default HomePageWrapper;

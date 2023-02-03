@@ -1,20 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
-import { addNote } from '../utils/local-data';
 import { IoMdAddCircle } from 'react-icons/io';
 import { BsXLg } from 'react-icons/bs';
-import PropTypes from 'prop-types';
+import { addNote } from '../utils/local-data';
 
-function NoteInputWrapper() {
+const NoteInputWrapper = () => {
   const navigate = useNavigate();
-  const onSubmitHandler = (e, state) => {
-    e.preventDefault();
-    addNote(state);
+  const doSomething = () => {
     navigate('/');
   };
 
-  return <NoteInput onSubmit={onSubmitHandler} />;
-}
+  return <NoteInput doSomethingOnSubmit={doSomething} />;
+};
 
 class NoteInput extends React.Component {
   constructor(props) {
@@ -45,6 +43,13 @@ class NoteInput extends React.Component {
     });
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    addNote(this.state);
+    this.props.doSomethingOnSubmit();
+    console.log('data berhasil ditambahkan');
+  };
+
   handleShowModal = () => {
     this.setState({ showModal: true });
   };
@@ -72,7 +77,7 @@ class NoteInput extends React.Component {
                   <BsXLg />
                 </span>
               </div>
-              <form onSubmit={(e) => this.props.onSubmitHandler(e, this.state)}>
+              <form onSubmit={this.handleSubmit}>
                 <input
                   type='text'
                   placeholder='Input Judul Catatan Anda...'
@@ -93,7 +98,7 @@ class NoteInput extends React.Component {
 }
 
 NoteInput.propTypes = {
-  onSubmitHandler: PropTypes.func.isRequired,
+  onSubmitHandler: PropTypes.func,
 };
 
 export default NoteInputWrapper;
